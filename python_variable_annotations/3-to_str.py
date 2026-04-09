@@ -4,4 +4,4 @@
 
 def to_str(n: float) -> str:
     """Function documentation"""
-    return to_str(n)
+    return str(n)
