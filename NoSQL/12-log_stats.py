@@ -3,26 +3,23 @@
 from pymongo import MongoClient
 
 
-def log_stats():
-    """Function documentation"""
-    client = MongoClient('mongodb://127.0.0.1:27017')
+if __name__ == "__main__":
+    client = MongoClient("mongodb://127.0.0.1:27017")
     collection = client.logs.nginx
 
     total_logs = collection.count_documents({})
-    print(f"{total_logs} logs")
+    print("{} logs".format(total_logs))
 
     print("Methods:")
     methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
+
     for method in methods:
         count = collection.count_documents({"method": method})
-        print(f"\tmethod {method}: {count}")
+        print("\tmethod {}: {}".format(method, count))
 
     status_count = collection.count_documents({
         "method": "GET",
         "path": "/status"
     })
-    print(f"{status_count} status check")
 
-
-if __name__ == "__main__":
-    log_stats()
+    print("{} status check".format(status_count))
