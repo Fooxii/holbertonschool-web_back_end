@@ -1,0 +1,1 @@
+README file of the directory ES6_data_manipulation
