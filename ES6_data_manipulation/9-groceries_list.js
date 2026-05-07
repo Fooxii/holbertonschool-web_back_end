@@ -5,4 +5,6 @@ export default function groceriesList() {
   groceryList.set('Pasta', 1);
   groceryList.set('Rice', 1);
   groceryList.set('Banana', 5);
+
+  return groceryList;
 }
